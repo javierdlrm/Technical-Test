@@ -1,0 +1,74 @@
+﻿// Tranform / Transition
+@mixin transform($content...) {
+    -moz-transform: $content;
+    -ms-transform: $content;
+    -o-transform: $content;
+    -webkit-transform: $content;
+    transform: $content;
+}
+
+@mixin transition($content...) {
+    -moz-transition: $content;
+    -o-transition: $content;
+    -webkit-transition: $content;
+    transition: $content;
+}
+
+@mixin transition-delay($seconds) {
+    -moz-transition-delay: $seconds;
+    -o-transition-delay: $seconds;
+    -webkit-transition-delay: $seconds;
+    transition-delay: $seconds;
+}
+
+@mixin transition-duration($seconds) {
+    -moz-transition-duration: $seconds;
+    -o-transition-duration: $seconds;
+    -webkit-transition-duration: $seconds;
+    transition-duration: $seconds;
+}
+
+@mixin transition-property($property) {
+    -moz-transition-property: $property;
+    -o-transition-property: $property;
+    -webkit-transition-property: $property;
+    transition-property: $property;
+}
+
+@mixin transition-timing-function($function) {
+    -moz-transition-timing-function: $function;
+    -o-transition-timing-function: $function;
+    -webkit-transition-timing-function: $function;
+    transition-timing-function: $function;
+}
+
+// Colors
+$color-one: white;
+$color-two: #d5d5d5;
+$color-three: #727272;
+$color-four: #323232;
+$color-five: #202020;
+$color-six: #121212; //#181818;
+
+$color-validation-one: #e00000;
+$color-validation-two: #ff5100;
+$color-validation-three: rgba(222, 71, 0, 0.68);
+
+$transparency-one: rgba(0, 0, 0, 0.64); //rgba(0, 0, 0, 0.52);
+$transparency-two: rgba(17, 17, 17, 0.84); //rgba(20, 20, 20, 0.74);
+$transparency-three: rgba(15, 15, 15, 0.93); //rgba(20, 20, 20, 0.84);
+
+// Font-family
+$fontfamily-one: 'Segoe WP SemiLight';
+$fontfamily-two: 'FontAwesome';
+
+// Font sizes
+$fontsize-one: 14px;
+$fontsize-two: 16px;
+$fontsize-three: 16.5px;
+$fontsize-four: 24px;
+$fontsize-five: 28px;
+$fontsize-six: 30px;
+$fontsize-seven: 56px;
+$fontsize-eight: 160px;
+

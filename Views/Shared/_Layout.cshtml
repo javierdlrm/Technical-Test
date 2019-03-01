@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Technical Test</title>
+    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script type="text/javascript">
+        var appInsights=window.appInsights||function(config){
+            function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;for(s.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t
+        }({
+            instrumentationKey:"acf8fcbe-6799-47d9-8b8d-0df390c506f5"
+        });
+        
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>
+    <meta name="description" content="CSharp algorithm to reorganize columns of a text." />
+</head>
+<body>
+    <div class="body-content">
+        <div class="row">
+            <a id="hamburger-menu-button" class="hamburger-menu-button fa fa-bars" href="#menu"></a>
+            <div class="column-left">
+                <div id="scroll-left" class="scroll-left">
+                    <div class="content-wrapper">
+                        <div class="content-image"></div>
+                        <div class="content">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column-right">
+                <div id="scroll-right" class="scroll-right">
+                    <div class="menu-wrapper">
+                        <div class="menu-header menu-header-show">
+                            @Html.ActionLink("TECHNICAL TEST", "Index", "Home", new { area = "" }, new { @class = "title menu-title" })
+                            <a href="@Url.Action("Index", "Home")" class="hamburger-menu-item fa fa-home"></a>
+                            <hr class="line menu-line" />
+                        </div>
+                        <div class="menu-content">
+                            <ul>
+                                <li>
+                                    @Html.ActionLink("Start test", "Test", "Test", new { area = "" }, new { @class = "menu-item" })
+                                    <a href="@Url.Action("Test", "Test")" class="hamburger-menu-item fa fa-bolt"></a>
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Help", "Help", "Help", new { area = "" }, new { @class = "menu-item" })
+                                    <a href="@Url.Action("Help", "Help")" class="hamburger-menu-item fa fa-question"></a>
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Api", "Api", "Help", new { area = "" }, new { @class = "menu-item" })
+                                    <a href="@Url.Action("Api", "Help")" class="hamburger-menu-item fa fa-book"></a>
+                                </li>
+                            </ul>
+                            @Html.ActionLink("About me", "About", "Home", new { area = "" }, new { @class = "menu-item" })
+                            <a href="@Url.Action("About", "Home")" class="hamburger-menu-item fa fa-user"></a>
+                        </div>
+                        <footer>
+                            <p class="menu-item">&copy; @DateTime.Now.Year - Technical Test</p>
+                            <p class="hamburger-menu-item">&copy;</p>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/js")
+    @Scripts.Render("~/bundles/slimscroll")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

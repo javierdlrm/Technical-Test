@@ -1,0 +1,60 @@
+﻿@model TechnicalTest.Models.TestOptions
+
+@{
+    ViewBag.Title = "Test";
+    ViewBag.Tested = ViewBag.Tested ?? false;
+}
+
+<div id="test-section" class="display-middle">
+    @using (Html.BeginForm("Test", "Test", FormMethod.Post, new { @class = "test-form" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="write-number">
+            <p class="write-suggest">Number of characters per line:</p>
+            @Html.TextBoxFor(t => t.NumberOfCharacters, new { @id = "text", @class = "input-number", @type = "Number" })
+        </div>
+
+        @Html.TextAreaFor(t => t.Text, new { @class = "text-area", @placeholder = "Write some text or drop any file here!", @id = "text-area" })
+
+        <div class="buttons-wrapper">
+            @if (ViewBag.Tested)
+            {
+                <a id="button-copy" class="button button-copy fa fa-clipboard">
+                    <p id="copy-label" class="copy-label">Copied!</p>
+                </a>
+                <a class="button button-download fa fa-download" href="@Url.Action("Download", "Test", new { area = "" })"></a>
+                <input id="input-file" type="file" value="BROWSE" class="input-file" accept="text/plain" />
+                <label for="input-file" class="button button-browse-two">BROWSE</label>
+                <input type="submit" value="RUN TEST" class="button button-submit-two" />
+            }
+            else {
+                <input id="input-file" type="file" value="BROWSE" class="input-file" accept="text/plain" />
+                <label for="input-file" class="button button-browse">BROWSE</label>
+                <input type="submit" value="RUN TEST" class="button button-submit" />
+            }
+        </div>
+
+        if (Model?.Warnings != null && Model.Warnings.Count > 0)
+        {
+            <div id="warnings-area" class="validation-summary-warnings">
+                @foreach (var warning in Model.Warnings)
+                {
+                    <p class="validation-warning-header">@warning.GetMessage()</p>
+
+                    foreach (var context in warning.Contexts)
+                    {
+                        <p class="validation-warning-subheader">@context.GetTypeMessage()</p>
+                        <ul>
+                            @foreach (var number in context.Numbers)
+                            {
+                                <li>@context.GetContextMessage(number)</li>
+                            }
+                        </ul>
+                    }
+                }
+            </div>
+        }
+
+        @Html.ValidationSummary()
+    }
+</div>

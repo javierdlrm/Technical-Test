@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Api";
+}
+
+<div id="api-section" class="display-middle">
+    <div class="api-wrapper">
+        <p class="title">API</p>
+        <hr class="line api-line" />
+        <p class="subtitle">REQUEST</p>
+        <p class="api-text-title">URL's</p>
+        <p class="api-text">
+            [POST] - http://technicaltest.azurewebsites.net/api/Test<br />[POST] - http://technicaltest.azurewebsites.net/api/Test/Reorganize
+        </p>
+        <p class="api-text-title">JSON</p>
+        <p class="api-text">
+            { Text: "Añade aquí el texto que quieras testear.", NumberOfCharacters: 5 }
+        </p>
+        <p class="subtitle">RESPONSE</p>
+        <p class="api-text">
+            { "Text": "Aña-\nde\naquí\nel\ntex-\nto\nque\nquie-\nras\ntes-\nte-\nar.", "Warnings": [ { "Word": "QUIERAS", "Contexts": [ { "Syllable": "QUIE", "WarningType": 3, "Numbers": [] }, { "Syllable": "QUIE", "WarningType": 1, "Numbers": [] } ] } ] }
+        </p>
+    </div>
+</div>
+
